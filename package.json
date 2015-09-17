@@ -1,0 +1,41 @@
+{
+  "name": "hal-lelujah",
+  "version": "0.1.0",
+  "description": "Builder of HAL (Hypertext Application Language) resource representations for Node.js",
+  "keywords": [
+    "HAL",
+    "Hypertext Application Language",
+    "application/hal+json",
+    "hypertext",
+    "hypermedia",
+    "HATEOAS",
+    "REST",
+    "API"
+  ],
+  "homepage": "https://github.com/vtsukur/hal-lelujah",
+  "bugs": {
+    "url": "https://github.com/vtsukur/hal-lelujah/issues",
+    "email": "volodymyr.tsukur@gmail.com"
+  },
+  "license": "MIT",
+  "author": "Volodymyr Tsukur <volodymyr.tsukur@gmail.com> (https://github.com/vtsukur)",
+  "contributors": [
+    "Volodymyr Tsukur <volodymyr.tsukur@gmail.com> (https://github.com/vtsukur)"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vtsukur/hal-lelujah.git"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "2.3.x"
+  },
+  "engines": {
+    "node": ">= 0.12.x"
+  }
+}
