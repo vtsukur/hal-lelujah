@@ -33,7 +33,7 @@
   "dependencies": {
   },
   "devDependencies": {
-    "mocha": "2.3.x"
+    "mocha": "^2.3.2"
   },
   "engines": {
     "node": ">= 0.12.x"
