@@ -8,16 +8,18 @@ describe('hal-lelujah', function() {
 
     describe('representation', function() {
 
-        it('builds empty representation out of empty data object', function() {
-            var representation = hal.representation({});
+        it('builds empty representation out of empty data object', function () {
+            var repr = hal.representation({});
+
             //noinspection JSUnresolvedVariable
-            expect(representation).to.eql({});
+            expect(repr).to.eql({});
         });
 
         it('builds representation out of non-empty data object where result matches data object', function() {
-            var representation = hal.representation({ key: 'value' });
+            var repr = hal.representation({ key: 'value' });
+
             //noinspection JSUnresolvedVariable
-            expect(representation).to.eql({ key: 'value' });
+            expect(repr).to.eql({ key: 'value' });
         });
 
     });
