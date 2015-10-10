@@ -33,11 +33,12 @@
   "scripts": {
     "test": "./node_modules/.bin/mocha"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
+    "chai": "^3.2.0",
+    "coveralls": "^2.11.3",
     "mocha": "^2.3.2",
-    "chai": "^3.2.0"
+    "mocha-lcov-reporter": "^1.0.0"
   },
   "engines": {
     "node": ">= 0.12.x"
