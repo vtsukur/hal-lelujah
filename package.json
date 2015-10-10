@@ -33,8 +33,15 @@
   "scripts": {
     "test": "./node_modules/.bin/mocha"
   },
+  "config": {
+    "blanket": {
+      "pattern": "lib",
+      "data-cover-never": [ "node_modules", "test" ]
+    }
+  },
   "dependencies": {},
   "devDependencies": {
+    "blanket": "^1.1.7",
     "chai": "^3.2.0",
     "coveralls": "^2.11.3",
     "mocha": "^2.3.2",
