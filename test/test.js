@@ -46,6 +46,19 @@ describe('hal-lelujah', function () {
       expect(repr.toJSON()).to.eql(source);
     });
 
+    it('build representation with the given links', function () {
+      var repr = hal.representation().link('next', 'scheme://user@server:port/relative/url?query=string&two=params#hash');
+
+      //noinspection JSUnresolvedVariable
+      expect(repr.toJSON()).to.eql({
+        _links: {
+          next: {
+            href: 'scheme://user@server:port/relative/url?query=string&two=params#hash'
+          }
+        }
+      });
+    })
+
   });
 
 });
