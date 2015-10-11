@@ -46,7 +46,7 @@ describe('hal-lelujah', function () {
       expect(repr.toJSON()).to.eql(source);
     });
 
-    it('build representation with the given links', function () {
+    it('build representation with the given link', function () {
       var repr = hal.representation().link('next', 'scheme://user@server:port/relative/url?query=string&two=params#hash');
 
       //noinspection JSUnresolvedVariable
