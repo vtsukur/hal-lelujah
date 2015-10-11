@@ -15,7 +15,7 @@ describe('hal-lelujah', function () {
       {value: {}, description: 'empty'}
     ], function () {
       it('builds empty representation out of {description} data object', function (context) {
-        var repr = hal.representation(context.value);
+        var repr = hal.newRepresentation(context.value);
 
         //noinspection JSUnresolvedVariable
         expect(repr.toJSON()).to.eql({});
@@ -40,14 +40,14 @@ describe('hal-lelujah', function () {
           []
         ]
       };
-      var repr = hal.representation(source);
+      var repr = hal.newRepresentation(source);
 
       //noinspection JSUnresolvedVariable
       expect(repr.toJSON()).to.eql(source);
     });
 
     it('builds representation with the link given by relation name and hypertext reference', function () {
-      var repr = hal.representation().link('next', 'scheme://user@server:port/relative/url?query=string&two=params#hash');
+      var repr = hal.newRepresentation().link('next', 'scheme://user@server:port/relative/url?query=string&two=params#hash');
 
       //noinspection JSUnresolvedVariable
       expect(repr.toJSON()).to.eql({
@@ -60,7 +60,7 @@ describe('hal-lelujah', function () {
     });
 
     it('builds representation with the link given by relation name and link object', function () {
-      var repr = hal.representation().link('next', {
+      var repr = hal.newRepresentation().link('next', {
         href: 'scheme://user@server:port/relative/url?query=string&two=params#hash',
         name: 'specialization',
         templated: true
@@ -79,7 +79,7 @@ describe('hal-lelujah', function () {
     });
 
     it('builds representation with the templated link given by relation name and hypertext reference', function () {
-      var repr = hal.representation().templatedLink('next', 'scheme://user@server:port/relative/url/{template-param}?query=string&two=params#hash');
+      var repr = hal.newRepresentation().templatedLink('next', 'scheme://user@server:port/relative/url/{template-param}?query=string&two=params#hash');
 
       //noinspection JSUnresolvedVariable
       expect(repr.toJSON()).to.eql({
@@ -93,7 +93,7 @@ describe('hal-lelujah', function () {
     });
 
     it('builds representation with the templated link given by relation name and link object', function () {
-      var repr = hal.representation().templatedLink('next', {
+      var repr = hal.newRepresentation().templatedLink('next', {
         href: 'scheme://user@server:port/relative/url/{template-param}?query=string&two=params#hash',
         name: 'specialization',
         templated: false
