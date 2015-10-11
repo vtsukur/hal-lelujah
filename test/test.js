@@ -92,6 +92,25 @@ describe('hal-lelujah', function () {
       });
     });
 
+    it('builds representation with the templated link given by relation name and link object', function () {
+      var repr = hal.representation().templatedLink('next', {
+        href: 'scheme://user@server:port/relative/url?query=string&two=params#hash',
+        name: 'specialization',
+        templated: false
+      });
+
+      //noinspection JSUnresolvedVariable
+      expect(repr.toJSON()).to.eql({
+        _links: {
+          next: {
+            href: 'scheme://user@server:port/relative/url?query=string&two=params#hash',
+            name: 'specialization',
+            templated: false
+          }
+        }
+      });
+    });
+
   });
 
 });
