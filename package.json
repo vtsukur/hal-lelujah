@@ -37,7 +37,10 @@
   "config": {
     "blanket": {
       "pattern": "lib",
-      "data-cover-never": [ "node_modules", "test" ]
+      "data-cover-never": [
+        "node_modules",
+        "test"
+      ]
     }
   },
   "dependencies": {},
@@ -45,6 +48,7 @@
     "blanket": "^1.1.7",
     "chai": "^3.2.0",
     "coveralls": "^2.11.3",
+    "data-driven": "^1.2.1",
     "mocha": "^2.3.2",
     "mocha-lcov-reporter": "^1.0.0"
   },
