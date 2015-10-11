@@ -26,7 +26,7 @@ describe('hal-lelujah', function () {
     });
 
     it('builds representation out of non-empty data object using direct mapping from the data object', function () {
-      var source = {
+      var sourceData = {
         boolean: true,
         number: 7,
         string: 'property',
@@ -43,10 +43,10 @@ describe('hal-lelujah', function () {
           []
         ]
       };
-      var repr = hal.newRepresentation(source);
+      var repr = hal.newRepresentation(sourceData);
 
       //noinspection JSUnresolvedVariable
-      expect(repr.toJSON()).to.eql(source);
+      expect(repr.toJSON()).to.eql(sourceData);
     });
 
     it('builds representation with the link given by relation name and hypertext reference', function () {
@@ -63,20 +63,17 @@ describe('hal-lelujah', function () {
     });
 
     it('builds representation with the link given by relation name and link object', function () {
-      var repr = hal.newRepresentation().link('next', {
+      var sourceLink = {
         href: SAMPLE_HREF,
         name: 'specialization',
         templated: true
-      });
+      };
+      var repr = hal.newRepresentation().link('next', sourceLink);
 
       //noinspection JSUnresolvedVariable
       expect(repr.toJSON()).to.eql({
         _links: {
-          next: {
-            href: SAMPLE_HREF,
-            name: 'specialization',
-            templated: true
-          }
+          next: sourceLink
         }
       });
     });
@@ -96,20 +93,17 @@ describe('hal-lelujah', function () {
     });
 
     it('builds representation with the templated link given by relation name and link object', function () {
-      var repr = hal.newRepresentation().templatedLink('next', {
+      var sourceLink = {
         href: SAMPLE_TEMPLATED_HREF,
         name: 'specialization',
-        templated: false
-      });
+        templated: true
+      };
+      var repr = hal.newRepresentation().templatedLink('next', sourceLink);
 
       //noinspection JSUnresolvedVariable
       expect(repr.toJSON()).to.eql({
         _links: {
-          next: {
-            href: SAMPLE_TEMPLATED_HREF,
-            name: 'specialization',
-            templated: false
-          }
+          next: sourceLink
         }
       });
     });
