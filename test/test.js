@@ -12,7 +12,7 @@ describe('hal-lelujah', function() {
             var repr = hal.representation({});
 
             //noinspection JSUnresolvedVariable
-            expect(repr).to.eql({});
+            expect(repr.toJSON()).to.eql({});
         });
 
         it('builds representation out of non-empty data object using direct mapping from the data object', function() {
@@ -36,7 +36,7 @@ describe('hal-lelujah', function() {
             var repr = hal.representation(source);
 
             //noinspection JSUnresolvedVariable
-            expect(repr).to.eql(source);
+            expect(repr.toJSON()).to.eql(source);
         });
 
     });
