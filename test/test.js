@@ -79,13 +79,13 @@ describe('hal-lelujah', function () {
     });
 
     it('builds representation with the templated link given by relation name and hypertext reference', function () {
-      var repr = hal.representation().templatedLink('next', 'scheme://user@server:port/relative/url?query=string&two=params#hash');
+      var repr = hal.representation().templatedLink('next', 'scheme://user@server:port/relative/url/{template-param}?query=string&two=params#hash');
 
       //noinspection JSUnresolvedVariable
       expect(repr.toJSON()).to.eql({
         _links: {
           next: {
-            href: 'scheme://user@server:port/relative/url?query=string&two=params#hash',
+            href: 'scheme://user@server:port/relative/url/{template-param}?query=string&two=params#hash',
             templated: true
           }
         }
@@ -94,7 +94,7 @@ describe('hal-lelujah', function () {
 
     it('builds representation with the templated link given by relation name and link object', function () {
       var repr = hal.representation().templatedLink('next', {
-        href: 'scheme://user@server:port/relative/url?query=string&two=params#hash',
+        href: 'scheme://user@server:port/relative/url/{template-param}?query=string&two=params#hash',
         name: 'specialization',
         templated: false
       });
@@ -103,7 +103,7 @@ describe('hal-lelujah', function () {
       expect(repr.toJSON()).to.eql({
         _links: {
           next: {
-            href: 'scheme://user@server:port/relative/url?query=string&two=params#hash',
+            href: 'scheme://user@server:port/relative/url/{template-param}?query=string&two=params#hash',
             name: 'specialization',
             templated: false
           }
