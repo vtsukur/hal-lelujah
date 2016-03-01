@@ -5,6 +5,11 @@
 node_modules
 
 #
+# NPM log should not be shared
+#
+npm-debug.log
+
+#
 # IntelliJ IDEA files
 #
 *.iml
